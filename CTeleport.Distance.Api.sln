@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTeleport.Distance.Api", "CTeleport.Distance.Api\CTeleport.Distance.Api.csproj", "{FE616B47-3FAB-4C1A-8DE6-D7ACFAE5456C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTeleport.Distance.Api.xUnitTests", "CTeleport.Distance.Api.xUnitTests\CTeleport.Distance.Api.xUnitTests.csproj", "{C7FF27FC-AAF4-4FF2-90D4-BDF7670D8170}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTeleport.Distance.Api.xIntegrationTests", "CTeleport.Distance.Api.xIntegrationTests\CTeleport.Distance.Api.xIntegrationTests.csproj", "{6C8AE207-4B4A-4500-91A8-D485CB1CD30C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE616B47-3FAB-4C1A-8DE6-D7ACFAE5456C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE616B47-3FAB-4C1A-8DE6-D7ACFAE5456C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE616B47-3FAB-4C1A-8DE6-D7ACFAE5456C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE616B47-3FAB-4C1A-8DE6-D7ACFAE5456C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7FF27FC-AAF4-4FF2-90D4-BDF7670D8170}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7FF27FC-AAF4-4FF2-90D4-BDF7670D8170}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7FF27FC-AAF4-4FF2-90D4-BDF7670D8170}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7FF27FC-AAF4-4FF2-90D4-BDF7670D8170}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C8AE207-4B4A-4500-91A8-D485CB1CD30C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C8AE207-4B4A-4500-91A8-D485CB1CD30C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C8AE207-4B4A-4500-91A8-D485CB1CD30C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C8AE207-4B4A-4500-91A8-D485CB1CD30C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6A88D37-292F-4436-8FD9-65D7F842FFEB}
+	EndGlobalSection
+EndGlobal
