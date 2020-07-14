@@ -3,7 +3,7 @@ using Xunit;
 
 namespace CTeleport.Distance.Api.xUnitTests.Tests.Model
 {
-    public class CalculatorTests
+    public class CalculationHelperTests
     {
         [Fact, Trait("Owner", "AndreyK")]
         public void MeasureDistance_DMEandSVO_CorrectDistance()
@@ -14,7 +14,7 @@ namespace CTeleport.Distance.Api.xUnitTests.Tests.Model
             var dmeLon = 37.899494d;
             var dmeLat = 55.414566d;
 
-            var result = Calculator.MeasureDistance(svoLat, svoLon, dmeLat, dmeLon);
+            var result = CalculationHelper.MeasureDistance(svoLat, svoLon, dmeLat, dmeLon);
             Assert.Equal(42.5569296364556, result);
         }
 
@@ -27,7 +27,7 @@ namespace CTeleport.Distance.Api.xUnitTests.Tests.Model
             var cdgLon = 2.567023d;
             var cdgLat = 49.003196d;
 
-            var result = Calculator.MeasureDistance(svoLat, svoLon, cdgLat, cdgLon);
+            var result = CalculationHelper.MeasureDistance(svoLat, svoLon, cdgLat, cdgLon);
             Assert.Equal(1526.0594570691769, result);
         }
 
@@ -40,7 +40,7 @@ namespace CTeleport.Distance.Api.xUnitTests.Tests.Model
             var jfkLon = -73.78817d;
             var jfkLat = 40.642335d;
 
-            var result = Calculator.MeasureDistance(svoLat, svoLon, jfkLat, jfkLon);
+            var result = CalculationHelper.MeasureDistance(svoLat, svoLon, jfkLat, jfkLon);
             Assert.Equal(4654.091351466679, result);
         }
 
@@ -53,7 +53,7 @@ namespace CTeleport.Distance.Api.xUnitTests.Tests.Model
             var ezeLon = -58.539834d;
             var ezeLat = -34.81273d;
 
-            var result = Calculator.MeasureDistance(svoLat, svoLon, ezeLat, ezeLon);
+            var result = CalculationHelper.MeasureDistance(svoLat, svoLon, ezeLat, ezeLon);
             Assert.Equal(8396.2932694884112, result);
         }
 
@@ -63,14 +63,14 @@ namespace CTeleport.Distance.Api.xUnitTests.Tests.Model
             var svoLon = 37.416574d;
             var svoLat = 55.966324d;
 
-            var result = Calculator.MeasureDistance(svoLat, svoLon, svoLat, svoLon);
+            var result = CalculationHelper.MeasureDistance(svoLat, svoLon, svoLat, svoLon);
             Assert.Equal(0, result);
         }
 
         [Fact, Trait("Owner", "AndreyK")]
         public void MeasureDistance_0_CorrectDistance()
         {
-            var result = Calculator.MeasureDistance(0, 0, 0, 0);
+            var result = CalculationHelper.MeasureDistance(0, 0, 0, 0);
             Assert.Equal(0, result);
         }
     }

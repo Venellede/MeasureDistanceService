@@ -3,7 +3,7 @@ using System;
 
 namespace CTeleport.Distance.Api.Model
 {
-    public static class Calculator
+    public static class CalculationHelper
     {
         private const double EarthRadius = 6378.137;
         private const double MilesCof = 0.62137;

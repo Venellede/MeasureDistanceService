@@ -21,7 +21,7 @@ namespace CTeleport.Distance.Api.Services
             var client = _serviceProvider.GetRequiredService<IAirportMetadataClient>();
             var fromAirport = await client.GetAndCheckAirportMetadata(fromIATACode);
             var toAirport = await client.GetAndCheckAirportMetadata(toIATACode);
-            return Calculator.MeasureDistance(fromAirport.Location.Latitude, fromAirport.Location.Longitude, toAirport.Location.Latitude, toAirport.Location.Longitude);
+            return CalculationHelper.MeasureDistance(fromAirport.Location.Latitude, fromAirport.Location.Longitude, toAirport.Location.Latitude, toAirport.Location.Longitude);
         }
     }
 }
