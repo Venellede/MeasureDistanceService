@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json.Converters;
 using Refit;
 
 namespace CTeleport.Distance.Api
@@ -24,7 +25,7 @@ namespace CTeleport.Distance.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers()
-                .AddNewtonsoftJson();
+                .AddNewtonsoftJson(config => config.SerializerSettings.Converters.Add(new StringEnumConverter()));
 
             services.AddScoped<IMeasureDistanceService, MeasureDistanceService>();
             services.AddRefitClient<IAirportMetadataClient>()

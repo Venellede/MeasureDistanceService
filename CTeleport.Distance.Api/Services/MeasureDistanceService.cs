@@ -16,12 +16,13 @@ namespace CTeleport.Distance.Api.Services
             _serviceProvider = serviceProvider;
         }
 
-        public async Task<double> GetDistance(string fromIATACode, string toIATACode)
+        public async Task<Model.Distance> GetDistance(string fromIATACode, string toIATACode)
         {
             var client = _serviceProvider.GetRequiredService<IAirportMetadataClient>();
             var fromAirport = await client.GetAndCheckAirportMetadata(fromIATACode);
             var toAirport = await client.GetAndCheckAirportMetadata(toIATACode);
-            return CalculationHelper.MeasureDistance(fromAirport.Location.Latitude, fromAirport.Location.Longitude, toAirport.Location.Latitude, toAirport.Location.Longitude);
+            var result = CalculationHelper.MeasureDistance(fromAirport.Location.Latitude, fromAirport.Location.Longitude, toAirport.Location.Latitude, toAirport.Location.Longitude);
+            return new Model.Distance { Value = result, Measurement = Measurement.Miles };
         }
     }
 }

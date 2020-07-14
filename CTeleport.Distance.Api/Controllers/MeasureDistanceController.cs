@@ -21,10 +21,10 @@ namespace CTeleport.Distance.Api.Controllers
         }
 
         [HttpGet]
-        [Route("airports/{fromAirportCode}/distance/{toAirportCode}")]
-        public Task<IActionResult> GetDistanceBetweenAirports(string fromAirportCode, string toAirportCode)
+        [Route("airports/distance")]
+        public Task<IActionResult> GetDistanceBetweenAirports([FromQuery] string firstAirportIATA, [FromQuery] string secondAirportIATA)
         {
-            return ProcessRequest(() => _measureDistanceService.GetDistance(fromAirportCode, toAirportCode));
+            return ProcessRequest(() => _measureDistanceService.GetDistance(firstAirportIATA, secondAirportIATA));
         }
 
         private async Task<IActionResult> ProcessRequest<T>(Func<Task<T>> call)

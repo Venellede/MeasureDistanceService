@@ -6,7 +6,7 @@ namespace CTeleport.Distance.Api.xIntegrationTests.Clients
     [Headers("Accept: application/json")]
     interface IMeasureDistanceClient
     {
-        [Get("/airports/{firstAirportIata}/distance/{secondAirportIata}")]
-        Task<double> GetDistance(string firstAirportIata, string secondAirportIata);
+        [Get("/airports/distance")]
+        Task<Model.Distance> GetDistance([Query] string firstAirportIATA, [Query] string secondAirportIATA);
     }
 }

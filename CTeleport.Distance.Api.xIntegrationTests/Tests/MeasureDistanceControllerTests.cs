@@ -1,4 +1,5 @@
-﻿using CTeleport.Distance.Api.xIntegrationTests.Clients;
+﻿using CTeleport.Distance.Api.Model;
+using CTeleport.Distance.Api.xIntegrationTests.Clients;
 using CTeleport.Distance.Api.xIntegrationTests.Fixtures;
 using System.Net;
 using System.Threading.Tasks;
@@ -22,7 +23,8 @@ namespace CTeleport.Distance.Api.xIntegrationTests.Tests
 
             var result = await client.GetDistance("SVO", "DME");
 
-            Assert.Equal(42.5569296364556, result);
+            Assert.Equal(42.5569296364556, result.Value);
+            Assert.Equal(Measurement.Miles, result.Measurement);
         }
 
 
@@ -53,6 +55,16 @@ namespace CTeleport.Distance.Api.xIntegrationTests.Tests
             var client = (IMeasureDistanceResponse)Fixture.ServiceProvider.GetService(typeof(IMeasureDistanceResponse));
 
             var result = await client.GetDistance("", "");
+
+            Assert.Equal(HttpStatusCode.NotFound, result.StatusCode);
+        }
+
+        [Fact, Trait("Owner", "AndreyK")]
+        public async Task GetDistanceBetweenAirports_NullIata_OkWithData()
+        {
+            var client = (IMeasureDistanceResponse)Fixture.ServiceProvider.GetService(typeof(IMeasureDistanceResponse));
+
+            var result = await client.GetDistance(null, null);
 
             Assert.Equal(HttpStatusCode.NotFound, result.StatusCode);
         }
